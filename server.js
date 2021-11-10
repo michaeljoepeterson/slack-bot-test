@@ -17,12 +17,12 @@ app.use(cors);
 app.use(cors);
 */
 async function runServer() {
-  
+  /*
   app.listen(PORT, () => {
     console.log(`Your app is listening on port ${PORT}`);
   });
-  
- /*
+  */
+ 
   try{
     await slackApp.start(PORT);
     console.log('app slack',PORT);
@@ -30,7 +30,7 @@ async function runServer() {
   catch(e){
     console.log(e);
   }
-  */
+  
 } 
 
 runServer();
