@@ -31,6 +31,14 @@ async function runServer() {
   }
 } 
 
-runServer();
+//runServer();
+
+(async () => {
+  // Start your app
+  await slackApp.start(process.env.PORT || 3000);
+
+  console.log('⚡️ Bolt app is running!');
+})();
+
 
 module.exports = { runServer };
