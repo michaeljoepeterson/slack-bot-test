@@ -9,7 +9,7 @@ const slackApp = new App({
   signingSecret: SIGN_SECRET,
   token: SLACK_BOT_TOKEN,
 })
-const app = express();
+//const app = express();
 /*
 
 app.use(express.json());
@@ -25,6 +25,7 @@ async function runServer() {
  
   try{
     await slackApp.start(PORT);
+    console.log(slackApp);
     console.log('app slack',PORT);
   }
   catch(e){
