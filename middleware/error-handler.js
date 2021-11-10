@@ -1,3 +1,10 @@
+/**
+ * generic error handler for the app
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @returns 
+ */
 const errorHandler = function (req, res, next) {
     res.status(500);
     let err = res.err ? res.err : 'no error provided';

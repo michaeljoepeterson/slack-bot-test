@@ -1,7 +1,7 @@
 const express = require('express');
 const rateLimit = require("express-rate-limit");
 const router = express.Router();
-const {router: verificationRouter} = require('./verification-router');
+const {router: eventRouter} = require('./event-router');
 
 const limiter = rateLimit({
     windowMs: 1 * 60 * 1000,
@@ -10,6 +10,6 @@ const limiter = rateLimit({
 });
 
 router.use(limiter);
-router.use('/verify',verificationRouter);
+router.use('/events',eventRouter);
 
 module.exports = {router};

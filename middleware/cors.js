@@ -1,5 +1,5 @@
 /**
- * handle cors and check if domain has access
+ * handle cors
  * @returns 
  */
 const cors = function (req, res, next) {
