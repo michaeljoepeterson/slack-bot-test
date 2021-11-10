@@ -16,14 +16,19 @@ app.use(express.json());
 app.use(cors);
 app.use(cors);
 
-async function runServer(port = PORT) {
+async function runServer() {
   /*
   server = app.listen(port, () => {
     console.log(`Your app is listening on port ${port}`);
   });
   */
-  await slackApp.start();
-  console.log('app slack');
+  try{
+    await slackApp.start(PORT);
+    console.log('app slack');
+  }
+  catch(e){
+    console.log(e);
+  }
 } 
 
 runServer();
