@@ -24,7 +24,7 @@ async function runServer() {
   */
   try{
     await slackApp.start(PORT);
-    console.log('app slack');
+    console.log('app slack',PORT);
   }
   catch(e){
     console.log(e);
