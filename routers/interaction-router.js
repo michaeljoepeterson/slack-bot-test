@@ -8,8 +8,6 @@ router.post('/',checkSecret,handleChallenge,async (req,res,next) => {
     console.log(req.body?.event);
     try{
         res.status(200);
-        let helper = new SlackHelper(req.body);
-        await helper.sendSlackMessage('whats up');
         return res.json({
             message:'test'
         });
@@ -24,6 +22,6 @@ router.post('/',checkSecret,handleChallenge,async (req,res,next) => {
 });
 
 /**
- * router handles events from slack
+ * router handles interactive elements in slack
  */
 module.exports = {router};

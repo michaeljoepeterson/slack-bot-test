@@ -11,5 +11,6 @@ const limiter = rateLimit({
 
 router.use(limiter);
 router.use('/events',eventRouter);
+router.use('/interaction',eventRouter);
 
 module.exports = {router};
