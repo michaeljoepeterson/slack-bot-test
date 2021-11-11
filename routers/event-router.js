@@ -4,8 +4,10 @@ const {checkSecret} = require('../slack/middleware/check-secret');
 const { handleChallenge } = require('../slack/middleware/handle-challenge');
 const { SlackEventHelper } = require('../slack/slack-event-helper');
 
+/**
+ * handle events sent by slack 
+ */
 router.post('/',checkSecret,handleChallenge,async (req,res,next) => {
-    console.log(req.body?.event);
     try{
         res.status(200);
         let helper = new SlackEventHelper(req.body);

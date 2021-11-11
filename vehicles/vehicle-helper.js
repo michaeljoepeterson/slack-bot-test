@@ -83,7 +83,7 @@ class VehicleHelper{
     }
 
     async checkVinData(vehicleData){
-        let {vin,make,model,year,fuelType} = vehicleData;
+        let {vin,year} = vehicleData;
         let url = `${this.baseVinUrl}/${vin}?format=json&modelyear=${year}`;
         try{
             let response = await axios.get(url);

@@ -28,8 +28,23 @@ class VehicleResponse extends BaseVehicleData{
         }
     }
 
-    checkValue(){
-
+    /**
+     * compare the original passed vehicle data with the current vehicle response
+     * @param {*} vehicleData 
+     * @returns 
+     */
+    compareVehicleData(vehicleData){
+        let dataKeys = Object.keys(vehicleData);
+        let errorKeys = [];
+        for(let key of dataKeys){
+            if(key === 'vin'){
+                continue;
+            }
+            if(vehicleData[key]?.trim()?.toLowerCase() != this[key]?.trim()?.toLowerCase()){
+                errorKeys.push(key);
+            }
+        } 
+        return errorKeys;
     }
 }
 
