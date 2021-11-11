@@ -18,10 +18,11 @@ router.post('/',checkSecret,handleChallenge,async (req,res,next) => {
         });
     }
     catch(e){
-        let message = 'Error responding to event';
+        let message = 'Looks like an error occured please try again.';
         console.warn(message,e);
         res.err = e;
         res.errMessage = message;
+        await helper.sendSlackEventMessage(message);
         next(); 
     }
 });
