@@ -82,6 +82,11 @@ class VehicleHelper{
         return response;
     }
 
+    /**
+     * handle checking vin data and constructing vehicle response
+     * @param {*} vehicleData 
+     * @returns 
+     */
     async checkVinData(vehicleData){
         let {vin,year} = vehicleData;
         let url = `${this.baseVinUrl}/${vin}?format=json&modelyear=${year}`;
