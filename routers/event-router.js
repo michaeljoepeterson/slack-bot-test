@@ -9,9 +9,10 @@ router.post('/',checkSecret,handleChallenge,async (req,res,next) => {
     try{
         res.status(200);
         let helper = new SlackEventHelper(req.body);
-        await helper.sendSlackEventMessage('whats up');
+        let message = await helper.handleMessageText();
+        await helper.sendSlackEventMessage(message);
         return res.json({
-            message:'test'
+            message
         });
     }
     catch(e){
